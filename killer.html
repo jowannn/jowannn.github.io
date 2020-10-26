@@ -1,0 +1,914 @@
+<!doctype html>
+<html>
+<head>
+<style>
+	body{
+		background-color: black;
+		color: white;
+		font-family: "Times New Roman", Times, serif;
+	}
+	h1{
+		width: 100%;
+		display: block;
+		text-align: center;
+		background-image: url('banner.jpg');
+		line-height: 60px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+  	.image-list-small {
+  		font-family: Arial, Helvetica, sans-serif;
+  		margin: 0 auto;
+  		text-align: center;
+  		max-width: 1170px;
+  		padding: 0;
+	}
+	.image-list-small li {
+  		display: inline-block;
+  		width: 181px;
+  		margin: 0 6px 20px;
+	}	
+	/* Photo */
+	.image-list-small li > span {
+  		display: block;
+  		text-decoration: none;
+  		background-size: contain;
+  		background-repeat: no-repeat;
+		background-position: center;
+  		height: 137px;
+  		margin: 0;
+  		padding: 0;
+  		border-width: 4px;
+  		border-style: solid;
+  		border-color: white;
+  		outline: 1px solid #d0d0d0;
+  		box-shadow: 0 2px 1px #DDD;
+	}
+	.image-list-small .details {
+  		margin-top: 13px;
+	}
+		/* Title */
+	.image-list-small .details h3 {
+  		display: block;
+  		font-size: 12px;
+  		margin: 0 0 3px 0;
+  		white-space: nowrap;
+  		overflow: hidden;
+  		text-overflow: ellipsis;
+	}
+	.image-list-small .details h3 span {
+  		color: white;
+  		text-decoration: none;
+	}
+	.image-list-small .details .image-author {
+  		display: block;
+  		color: #717171;
+  		font-size: 11px;
+  		font-weight: normal;
+  		margin: 0;
+	}
+	
+	.navbar {
+  		list-style-type: none;
+  		margin: 0;
+  		padding: 0;
+  		overflow: hidden;
+  		background-color: #333;
+  		position: -webkit-sticky; /* Safari */
+  		position: sticky;
+  		top: 0;
+	}
+
+	.nav-item {
+  		float: left;
+	}
+
+	.nav-item a {
+  		display: block;
+  		color: white;
+  		text-align: center;
+  		padding: 14px 16px;
+  		text-decoration: none;
+	}
+
+	.nav-item a:hover {
+  		background-color: #111;
+	}
+
+	.active {
+  		background-color: red;
+	}
+</style>
+<meta charset="utf-8">
+<title>Killer Loadout</title>
+</head>
+
+<body>
+	<h1>DEAD BY DAYLIGHT &#8482 : <span style = "color: red;">LOADOUT ROULETTE</span></h1>
+	<ul class = "navbar">
+  		<li class = "nav-item"><a href= "home.html">HOME</a></li>
+  		<li class = "nav-item"><a href= "survivor.html">SURVIVOR</a></li>
+		<li class = "nav-item"><a class = "active" href = "killer.html">KILLER</a></li>
+  		<li class = "nav-item"><a href= "https://deadbydaylight.gamepedia.com/Perks">PERKS</a></li>
+		<li class = "nav-item"><a href= "https://deadbydaylight.gamepedia.com/Add-ons">ADD-ONS</a></li>
+  		<li class = "nav-item"><a href= "https://deadbydaylight.gamepedia.com/Items">ITEMS</a></li>
+		<li class = "nav-item"><a href= "https://deadbydaylight.gamepedia.com/Offerings">OFFERINGS</a></li>
+	</ul>
+	<h2 id = "demo" style = "text-align: center;">KILLER LOADOUT</h2>
+	<h3 style = "text-align: center; font-size: 15px; width: 600px; margin: auto; color: #383838">PRESS ROLL TO RANDOMIZE PERKS AND ADD-ONS. CHOOSE A KILLER FROM THE DROPDOWN FOR THEIR ADD-ONS OR LEAVE BLANK TO ONLY ROLL PERKS. SELECT "RANDOM KILLER" TO ROLL ADD-ONS FOR A RANDOMIZED KILLER. TOGGLE PERKS ON/OFF BY CLICKING ON THEIR PICTURES. RESET BUTTON ENABLES ALL PERKS AND CLEARS ROLL.</h3><br>
+	
+	<ul class="image-list-small">
+<li>
+  <span id = "0" style="border-color: white;"></span>
+  <div class="details">
+    <h3><span id = "n0"></span></h3>
+    <p class="image-author"></p>
+  </div>
+</li>
+<li>
+  <span id = "1" style="border-color: white;"></span>
+  <div class="details">
+    <h3><span id = "n1"></span></h3>
+    <p class="image-author"></p>
+  </div>
+</li>
+<li>
+  <span id = "2" style="border-color: white;"></span>
+  <div class="details">
+    <h3><span id = "n2"></span></h3>
+    <p class="image-author"></p>
+  </div>
+</li>
+<li>
+  <span id = "3" style="border-color: white;"></span>
+  <div class="details">
+    <h3><span id = "n3"></span></h3>
+    <p class="image-author"></p>
+  </div>
+</li>
+	</ul>
+	<ul class="image-list-small">
+<li style = "width:110px; height:88px; margin: 0px 70px 20px;">
+  <span id = "p0" style="border-color: white; width: 110px; height: 88px; margin: auto;"></span>
+  <div class="details">
+    <h3 style = "width:110px; font-size: 8px;"><span id = "s0"></span></h3>
+    <p class="image-author"></p>
+  </div>
+</li>
+<li style = "width:110px; height:88px; margin: 0px 70px 20px;">
+  <span id = "p1" style="border-color: white; width: 110px; height: 88px; margin:auto;"></span>
+  <div class="details">
+    <h3 style = "width:110px; font-size: 8px;"><span id = "s1"></span></h3>
+    <p class="image-author"></p>
+  </div>
+</li>
+	</ul><br><br>
+
+	<select name="killer" id="killer" style = "margin-left: auto; margin-right: auto; display: block;">
+    	<option value="" selected="selected">SELECT KILLER</option>
+		<option value ="RANDOM KILLER">RANDOM KILLER</option>
+		<option value="BLIGHT">BLIGHT</option>
+		<option value="CANNIBAL">CANNIBAL</option>
+		<option value="CLOWN">CLOWN</option>
+		<option value="DEATHSLINGER">DEATHSLINGER</option>
+		<option value="DEMOGORGON">DEMOGORGON</option>
+		<option value="DOCTOR">DOCTOR</option>
+		<option value="EXECUTIONER">EXECUTIONER</option>
+		<option value="GHOST FACE">GHOST FACE</option>
+		<option value="HAG">HAG</option>
+		<option value="HILLBILLY">HILLBILLY</option>
+		<option value="HUNTRESS">HUNTRESS</option>
+		<option value="LEGION">LEGION</option>
+		<option value="NIGHTMARE">NIGHTMARE</option>
+		<option value="NURSE">NURSE</option>
+		<option value="ONI">ONI</option>
+		<option value="PIG">PIG</option>
+		<option value="PLAGUE">PLAGUE</option>
+		<option value="SHAPE">SHAPE</option>
+		<option value="SPIRIT">SPIRIT</option>
+		<option value="TRAPPER">TRAPPER</option>
+		<option value="WRAITH">WRAITH</option>		
+  </select><br>
+	
+	<button type = "button" onclick="roll()" style = "display: block; margin-left: auto; margin-right: auto; width: 200px; height: 30px">ROLL</button>
+	<button type = "button" onclick="reset()" style = "display: block; margin-left: auto; margin-right: auto; width: 200px; height: 30px">RESET</button>
+	<br>
+	
+	<ul class="image-list-small">
+<li>
+  <span id = "A NURSE'S CALLING" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/anursescalling.png');"></span>
+  <div class="details">
+    <h3><span class = "names">A NURSE'S CALLING</span></h3>
+    <p class="image-author">THE NURSE</p>
+  </div>
+</li>
+<li>
+  <span id = "AGITATION" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/agitation.png');"></span>
+  <div class="details">
+    <h3><span class = "names">AGITATION</span></h3>
+    <p class="image-author">THE TRAPPER</p>
+  </div>
+</li>
+<li>
+  <span id = "BAMBOOZLE" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/bamboozle.png');"></span>
+  <div class="details">
+    <h3><span class = "names">BAMBOOZLE</span></h3>
+    <p class="image-author">THE CLOWN</p>
+  </div>
+</li>
+<li>
+  <span id = "BARBECUE AND CHILLI" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/barbecueandchilli.png');"></span>
+  <div class="details">
+    <h3><span class = "names">BARBECUE AND CHILLI</span></h3>
+    <p class="image-author">THE CANNIBAL</p>
+  </div>
+</li>
+<li>
+  <span id = "BEAST OF PREY" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/beastofprey.png');"></span>
+  <div class="details">
+    <h3><span class = "names">BEAST OF PREY</span></h3>
+    <p class="image-author">THE HUNTRESS</p>
+  </div>
+</li>
+<li>
+  <span id = "BITTER MURMUR" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/bittermurmur.png');"></span>
+  <div class="details">
+    <h3><span class = "names">BITTER MURMUR</span></h3>
+    <p class="image-author">ALL</p>
+  </div>
+</li>
+<li>
+  <span id = "BLOOD ECHO" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/bloodecho.png');"></span>
+  <div class="details">
+    <h3><span class = "names">BLOOD ECHO</span></h3>
+    <p class="image-author">THE ONI</p>
+  </div>
+</li>
+<li>
+  <span id = "BLOODHOUND" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/bloodhound.png');"></span>
+  <div class="details">
+    <h3><span class = "names">BLOODHOUND</span></h3>
+    <p class="image-author">THE WRAITH</p>
+  </div>
+</li>
+<li>
+  <span id = "BLOOD WARDEN" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/bloodwarden.png');"></span>
+  <div class="details">
+    <h3><span class = "names">BLOOD WARDEN</span></h3>
+    <p class="image-author">THE NIGHTMARE</p>
+  </div>
+</li>
+<li>
+  <span id = "BRUTAL STRENGTH" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/brutalstrength.png');"></span>
+  <div class="details">
+    <h3><span class = "names">BRUTAL STRENGTH</span></h3>
+    <p class="image-author">THE TRAPPER</p>
+  </div>
+</li>
+<li>
+  <span id = "CORRUPT INTERVENTION" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/corruptintervention.png');"></span>
+  <div class="details">
+    <h3><span class = "names">CORRUPT INTERVENTION</span></h3>
+    <p class="image-author">THE PLAGUE</p>
+  </div>
+</li>
+<li>
+  <span id = "COULROPHOBIA" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/coulrophobia.png');"></span>
+  <div class="details">
+    <h3><span class = "names">COULROPHOBIA</span></h3>
+    <p class="image-author">THE CLOWN</p>
+  </div>
+</li>
+<li>
+  <span id = "CRUEL LIMITS" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_PerkS/cruellimits.png');"></span>
+  <div class="details">
+    <h3><span class = "names">CRUEL LIMITS</span></h3>
+    <p class="image-author">THE DEMOGORGON</p>
+  </div>
+</li>
+<li>
+  <span id = "DARK DEVOTION" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/darkdevotion.png');"></span>
+  <div class="details">
+    <h3><span class = "names">DARK DEVOTION</span></h3>
+    <p class="image-author">THE PLAGUE</p>
+  </div>
+</li>
+<li>
+  <span id = "DEAD MAN'S SWITCH" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/deadmansswitch.png');"></span>
+  <div class="details">
+    <h3><span class = "names">DEAD MAN'S SWITCH</span></h3>
+    <p class="image-author">THE DEATHSLINGER</p>
+  </div>
+</li>
+<li>
+  <span id = "DEATHBOUND" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/deathbound.png');"></span>
+  <div class="details">
+    <h3><span class = "names">DEATHBOUND</span></h3>
+    <p class="image-author">THE EXECUTIONER</p>
+  </div>
+</li>
+<li>
+  <span id = "DEERSTALKER" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/deerstalker.png');"></span>
+  <div class="details">
+    <h3><span class = "names">DEERSTALKER</span></h3>
+    <p class="image-author">ALL</p>
+  </div>
+</li>
+<li>
+  <span id = "DISCORDANCE" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/discordance.png');"></span>
+  <div class="details">
+    <h3><span class = "names">DISCORDANCE</span></h3>
+    <p class="image-author">THE LEGION</p>
+  </div>
+</li>
+<li>
+  <span id = "DISTRESSING" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/distressing.png');"></span>
+  <div class="details">
+    <h3><span class = "names">DISTRESSING</span></h3>
+    <p class="image-author">ALL</p>
+  </div>
+</li>
+<li>
+  <span id = "DRAGON'S GRIP" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/dragonsgrip.png');"></span>
+  <div class="details">
+    <h3><span class = "names">DRAGON'S GRIP</span></h3>
+    <p class="image-author">THE BLIGHT</p>
+  </div>
+</li>
+<li>
+  <span id = "DYING LIGHT" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/dyinglight.png');"></span>
+  <div class="details">
+    <h3><span class = "names">DYING LIGHT</span></h3>
+    <p class="image-author">THE SHAPE</p>
+  </div>
+</li>
+<li>
+  <span id = "ENDURING" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/enduring.png');"></span>
+  <div class="details">
+    <h3><span class = "names">ENDURING</span></h3>
+    <p class="image-author">THE HILLBILLY</p>
+  </div>
+</li>
+<li>
+  <span id = "FIRE UP" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/fireup.png');"></span>
+  <div class="details">
+    <h3><span class = "names">FIRE UP</span></h3>
+    <p class="image-author">THE NIGHTMARE</p>
+  </div>
+</li>
+<li>
+  <span id = "FORCED PENANCE" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/forcedpenance.png');"></span>
+  <div class="details">
+    <h3><span class = "names">FORCED PENANCE</span></h3>
+    <p class="image-author">THE EXECUTIONER</p>
+  </div>
+</li>
+<li>
+  <span id = "FRANKLIN'S DEMISE" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/franklinsdemise.png');"></span>
+  <div class="details">
+    <h3><span class = "names">FRANKLIN'S DEMISE</span></h3>
+    <p class="image-author">THE CANNIBAL</p>
+  </div>
+</li>
+<li>
+  <span id = "FURTIVE CHASE" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/furtivechase.png');"></span>
+  <div class="details">
+    <h3><span class = "names">FURTIVE CHASE</span></h3>
+    <p class="image-author">THE GHOST FACE</p>
+  </div>
+</li>
+<li>
+  <span id = "GEARHEAD" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/gearhead.png');"></span>
+  <div class="details">
+    <h3><span class = "names">GEARHEAD</span></h3>
+    <p class="image-author">THE DEATHSLINGER</p>
+  </div>
+</li>
+<li>
+  <span id = "HANGMAN'S TRICK" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/hangmanstrick.png');"></span>
+  <div class="details">
+    <h3><span class = "names">HANGMAN'S TRICK</span></h3>
+    <p class="image-author">THE PIG</p>
+  </div>
+</li>
+<li>
+  <span id = "HEX: BLOOD FAVOR" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/bloodfavor.png');"></span>
+  <div class="details">
+    <h3><span class = "names">HEX: BLOOD FAVOR</span></h3>
+    <p class="image-author">THE BLIGHT</p>
+  </div>
+</li>
+<li>
+  <span id = "HEX: DEVOUR HOPE" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/devourhope.png');"></span>
+  <div class="details">
+    <h3><span class = "names">HEX: DEVOUR HOPE</span></h3>
+    <p class="image-author">THE HAG</p>
+  </div>
+</li>
+<li>
+  <span id = "HEX: HAUNTED GROUND" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/hauntedground.png');"></span>
+  <div class="details">
+    <h3><span class = "names">HEX: HAUNTED GROUND</span></h3>
+    <p class="image-author">THE SPIRIT</p>
+  </div>
+</li>
+<li>
+  <span id = "HEX: HUNTRESS LULLABY" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/huntresslullaby.png');"></span>
+  <div class="details">
+    <h3><span class = "names">HEX: HUNTRESS LULLABY</span></h3>
+    <p class="image-author">THE HUNTRESS</p>
+  </div>
+</li>
+<li>
+  <span id = "HEX: NO ONE ESCAPES DEATH" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/nooneescapesdeath.png');"></span>
+  <div class="details">
+    <h3><span class = "names">HEX: N.O.E.D.</span></h3>
+    <p class="image-author">ALL</p>
+  </div>
+</li>
+<li>
+  <span id = "HEX: RETRIBUTION" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/retribution.png');"></span>
+  <div class="details">
+    <h3><span class = "names">HEX: RETRIBUTION</span></h3>
+    <p class="image-author">THE DEATHSLINGER</p>
+  </div>
+</li>
+<li>
+  <span id = "HEX: RUIN" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/ruin.png');"></span>
+  <div class="details">
+    <h3><span class = "names">HEX: RUIN</span></h3>
+    <p class="image-author">THE HAG</p>
+  </div>
+</li>
+<li>
+  <span id = "HEX: THE THIRD SEAL" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/thethirdseal.png');"></span>
+  <div class="details">
+    <h3><span class = "names">HEX: THE THIRD SEAL</span></h3>
+    <p class="image-author">THE HAG</p>
+  </div>
+</li>
+<li>
+  <span id = "HEX: THRILL OF THE HUNT" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/thrillofthehunt.png');"></span>
+  <div class="details">
+    <h3><span class = "names">HEX: THRILL OF THE HUNT</span></h3>
+    <p class="image-author">ALL</p>
+  </div>
+</li>
+<li>
+  <span id = "HEX: UNDYING" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/undying.png');"></span>
+  <div class="details">
+    <h3><span class = "names">UNDYING</span></h3>
+    <p class="image-author">THE BLIGHT</p>
+  </div>
+</li>
+<li>
+  <span id = "I'M ALL EARS" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/imallears.png');"></span>
+  <div class="details">
+    <h3><span class = "names">I'M ALL EARS</span></h3>
+    <p class="image-author">THE GHOST FACE</p>
+  </div>
+</li>
+<li>
+  <span id = "INFECTIOUS FRIGHT" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/infectiousfright.png');"></span>
+  <div class="details">
+    <h3><span class = "names">INFECTIOUS FRIGHT</span></h3>
+    <p class="image-author">THE PLAGUE</p>
+  </div>
+</li>
+<li>
+  <span id = "INSIDIOUS" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/insidious.png');"></span>
+  <div class="details">
+    <h3><span class = "names">INSIDIOUS</span></h3>
+    <p class="image-author">ALL</p>
+  </div>
+</li>
+<li>
+  <span id = "IRON GRASP" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/irongrasp.png');"></span>
+  <div class="details">
+    <h3><span class = "names">IRON GRASP</span></h3>
+    <p class="image-author">ALL</p>
+  </div>
+</li>
+<li>
+  <span id = "IRON MAIDEN" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/ironmaiden.png');"></span>
+  <div class="details">
+    <h3><span class = "names">IRON MAIDEN</span></h3>
+    <p class="image-author">THE LEGION</p>
+  </div>
+</li>
+<li>
+  <span id = "KNOCK OUT" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/knockout.png');"></span>
+  <div class="details">
+    <h3><span class = "names">KNOCK OUT</span></h3>
+    <p class="image-author">THE CANNIBAL</p>
+  </div>
+</li>
+<li>
+  <span id = "LIGHTBORN" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/lightborn.png');"></span>
+  <div class="details">
+    <h3><span class = "names">LIGHTBORN</span></h3>
+    <p class="image-author">THE HILLBILLY</p>
+  </div>
+</li>
+<li>
+  <span id = "MAD GRIT" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/madgrit.png');"></span>
+  <div class="details">
+    <h3><span class = "names">MAD GRIT</span></h3>
+    <p class="image-author">THE LEGION</p>
+  </div>
+</li>
+<li>
+  <span id = "MAKE YOUR CHOICE" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/makeyourchoice.png');"></span>
+  <div class="details">
+    <h3><span class = "names">MAKE YOUR CHOICE</span></h3>
+    <p class="image-author">THE PIG</p>
+  </div>
+</li>
+<li>
+  <span id = "MINDBREAKER" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/mindbreaker.png');"></span>
+  <div class="details">
+    <h3><span class = "names">MINDBREAKER</span></h3>
+    <p class="image-author">THE DEMOGORGON</p>
+  </div>
+</li>
+<li>
+  <span id = "MONITOR AND ABUSE" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/monitorandabuse.png');"></span>
+  <div class="details">
+    <h3><span class = "names">MONITOR AND ABUSE</span></h3>
+    <p class="image-author">THE DOCTOR</p>
+  </div>
+</li>
+<li>
+  <span id = "MONSTROUS SHRINE" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/monstrousshrine.png');"></span>
+  <div class="details">
+    <h3><span class = "names">MONSTROUS SHRINE</span></h3>
+    <p class="image-author">ALL</p>
+  </div>
+</li>
+<li>
+  <span id = "NEMESIS" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/nemesis.png');"></span>
+  <div class="details">
+    <h3><span class = "names">NEMESIS</span></h3>
+    <p class="image-author">THE ONI</p>
+  </div>
+</li>
+<li>
+  <span id = "OVERCHARGE" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/overcharge.png');"></span>
+  <div class="details">
+    <h3><span class = "names">OVERCHARGE</span></h3>
+    <p class="image-author">THE DOCTOR</p>
+  </div>
+</li>
+<li>
+  <span id = "OVERWHELMING PRESCENCE" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/overwhelmingpresence.png');"></span>
+  <div class="details">
+    <h3><span class = "names">OVERWHELMING PRESCENCE</span></h3>
+    <p class="image-author">THE DOCTOR</p>
+  </div>
+</li>
+<li>
+  <span id = "PLAY WITH YOUR FOOD" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/playwithyourfood.png');"></span>
+  <div class="details">
+    <h3><span class = "names">PLAY WITH YOUR FOOD</span></h3>
+    <p class="image-author">THE SHAPE</p>
+  </div>
+</li>
+<li>
+  <span id = "POP GOES THE WEASEL" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/popgoestheweasel.png');"></span>
+  <div class="details">
+    <h3><span class = "names">POP GOES THE WEASEL</span></h3>
+    <p class="image-author">THE CLOWN</p>
+  </div>
+</li>
+<li>
+  <span id = "PREDATOR" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/predator.png');"></span>
+  <div class="details">
+    <h3><span class = "names">PREDATOR</span></h3>
+    <p class="image-author">THE WRAITH</p>
+  </div>
+</li>
+<li>
+  <span id = "RANCOR" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/rancor.png');"></span>
+  <div class="details">
+    <h3><span class = "names">RANCOR</span></h3>
+    <p class="image-author">THE SPIRIT</p>
+  </div>
+</li>
+<li>
+  <span id = "REMEMBER ME" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/rememberme.png');"></span>
+  <div class="details">
+    <h3><span class = "names">REMEMBER ME</span></h3>
+    <p class="image-author">THE NIGHTMARE</p>
+  </div>
+</li>
+<li>
+  <span id = "SAVE THE BEST FOR LAST" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/savethebestforlast.png');"></span>
+  <div class="details">
+    <h3><span class = "names">SAVE THE BEST FOR LAST</span></h3>
+    <p class="image-author">THE SHAPE</p>
+  </div>
+</li>
+<li>
+  <span id = "SHADOWBORN" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/shadowborn.png');"></span>
+  <div class="details">
+    <h3><span class = "names">SHADOWBORN</span></h3>
+    <p class="image-author">THE WRAITH</p>
+  </div>
+</li>
+<li>
+  <span id = "SLOPPY BUTCHER" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/sloppybutcher.png');"></span>
+  <div class="details">
+    <h3><span class = "names">SLOPPY BUTCHER</span></h3>
+    <p class="image-author">ALL</p>
+  </div>
+</li>
+<li>
+  <span id = "SPIES FROM THE SHADOWS" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/spiesfromtheshadows.png');"></span>
+  <div class="details">
+    <h3><span class = "names">SPIES FROM THE SHADOWS</span></h3>
+    <p class="image-author">ALL</p>
+  </div>
+</li>
+<li>
+  <span id = "SPIRIT FURY" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/spiritfury.png');"></span>
+  <div class="details">
+    <h3><span class = "names">SPIRIT FURY</span></h3>
+    <p class="image-author">THE SPIRIT</p>
+  </div>
+</li>
+<li>
+  <span id = "STRIDOR" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/stridor.png');"></span>
+  <div class="details">
+    <h3><span class = "names">STRIDOR</span></h3>
+    <p class="image-author">THE NURSE</p>
+  </div>
+</li>
+<li>
+  <span id = "SURGE" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/surge.png');"></span>
+  <div class="details">
+    <h3><span class = "names">SURGE</span></h3>
+    <p class="image-author">THE DEMOGORGON</p>
+  </div>
+</li>
+<li>
+  <span id = "SURVEILLANCE" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/surveillance.png');"></span>
+  <div class="details">
+    <h3><span class = "names">SURVEILLANCE</span></h3>
+    <p class="image-author">THE PIG</p>
+  </div>
+</li>
+<li>
+  <span id = "TERRITORIAL IMPERATIVE" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/territorialimperative.png');"></span>
+  <div class="details">
+    <h3><span class = "names">TERRITORIAL IMPERATIVE</span></h3>
+    <p class="image-author">THE HUNTRESS</p>
+  </div>
+</li>
+<li>
+  <span id = "THANATOPHOBIA" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/thanatophobia.png');"></span>
+  <div class="details">
+    <h3><span class = "names">THANATOPHOBIA</span></h3>
+    <p class="image-author">THE NURSE</p>
+  </div>
+</li>
+<li>
+  <span id = "THRILLING TREMORS" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/thrillingtremors.png');"></span>
+  <div class="details">
+    <h3><span class = "names">THRILLING TREMORS</span></h3>
+    <p class="image-author">THE GHOST FACE</p>
+  </div>
+</li>
+<li>
+  <span id = "TRAIL OF TORMENT" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/trailoftorment.png');"></span>
+  <div class="details">
+    <h3><span class = "names">TRAIL OF TORMENT</span></h3>
+    <p class="image-author">THE EXECUTIONER</p>
+  </div>
+</li>
+<li>
+  <span id = "UNNERVING PRESENCE" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/unnervingpresence.png');"></span>
+  <div class="details">
+    <h3><span class = "names">UNNERVING PRESENCE</span></h3>
+    <p class="image-author">THE TRAPPER</p>
+  </div>
+</li>
+<li>
+  <span id = "UNRELENTING" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/unrelenting.png');"></span>
+  <div class="details">
+    <h3><span class = "names">UNRELENTING</span></h3>
+    <p class="image-author">ALL</p>
+  </div>
+</li>
+<li>
+  <span id = "WHISPERS" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/whispers.png');"></span>
+  <div class="details">
+    <h3><span class = "names">WHISPERS</span></h3>
+    <p class="image-author">ALL</p>
+  </div>
+</li>
+<li>
+  <span id = "ZANSHIN TACTICS" class = "imgs" onclick = "clickChange(this)" style="background-image: url('K_Perks/zanshintactics.png');"></span>
+  <div class="details">
+    <h3><span class = "names">ZANSHIN TACTICS</span></h3>
+    <p class="image-author">THE ONI</p>
+  </div>
+</li>
+</ul>
+	
+	
+	
+	<script>
+		var pNames = [];
+		var pNamesCopy = [];
+		var randArr = [];
+		var randNames = ["n0", "n1", "n2", "n3"];
+		var killers = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+		
+		var blight = ["PLACEBO TABLET", "FOXGLOVE", "COMPOUND SEVEN", "CHIPPED MONOCLE", "SHREDDED NOTES", "PUSTULA DUST", "PLAGUE BILE", "CANKER THORN", "BLIGHTED RAT", "UMBRA SALTS", "ROSE TONIC", "COMPOUND TWENTY-ONE", "BLIGHTED CROW", "ADRENALINE VIAL", "VIGO'S JOURNAL", "SUMMONING STONE", "SOUL CHEMICAL", "ALCHEMIST'S RING", "IRIDESCENT BLIGHT TAG", "COMPOUND THIRTY-THREE", "BLIGHT SERUM"];
+		killers[0] = blight;
+		var cannibal = ["VEGETABLE OIL", "SPARK PLUG", "SPEED LIMITER", "CHAINSAW FILE", "LONG GUIDE BAR", "PRIMER BULB", "KNIFE SCRATCHES", "HOMEMADE MUFFLER", "CHILLI", "THE GREASE", "THE BEAST'S MARKS", "SHOP LUBRICANT", "GRISLY CHAINS", "BEGRIMED CHAINS", "RUSTED CHAINS", "LIGHT CHASSIS", "DEPTH GAUGE RAKE", "AWARD-WINNING CHILLI", "IRIDESCENT FLESH", "CARBURETTOR TUNING GUIDE", "BLIGHT SERUM"];
+		killers[1] = cannibal;
+		var clown = ["SMELLY INNER SOLES", "ROBIN FEATHER", "FINGERLESS PARADE GLOVES", "ETHER 5 VOL%",  "THICK CORK STOPPER", "STICKY SODA BOTTLE", "STARLING FEATHER", "SOLVENT JUG", "KEROSENE CAN", "VHS PORN", "SULPHURIC ACID VIAL", "FLASK OF BLEACH", "ETHER 10 VOL%", "BOTTLE OF CHLOROFORM", "GARISH MAKE-UP KIT", "ETHER 15 VOL%", "CIGAR BOX", "CHEAP GIN BOTTLE", "TATTOO'S MIDDLE FINGER", "REDHEAD'S PINKY FINGER", "BLIGHT SERUM"];
+		killers[2] = clown;
+		var deathslinger = ["SPIT POLISH RAG", "SNAKE OIL", "RICKETY CHAIN", "MODIFIED AMMO BELT", "RUSTED SPIKE", "POISON OAK LEAVES", "MARSHAL'S BADGE", "JAW SMASHER", "CHEWING TOBACCO", "WARDEN'S KEYS", "WANTED POSTER", "TIN OIL CAN", "HONEY LOCUST THORN", "BAYSHORE'S GOLD TOOTH", "PRISON CHAIN", "GOLD CREEK WHISKEY", "BAYSHORE'S CIGAR", "BARBED WIRE", "IRIDESCENT COIN", "HELLSHIRE IRON", "BLIGHT SERUM"];
+		killers[3] = deathslinger;
+		var demogorgon = ["ROTTEN PUMPKIN", "BLACK HEART", "RAT LIVER", "RAT TAIL", "STICKY LINING", "VISCOUS WEBBING", "ROTTEN GREEN TRIPE", "MEW'S GUTS", "BARB'S GLASSES", "ELEVEN'S SODA", "THORNY VINES", "BRASS CASE LIGHTER", "VIOLET WAXCAP", "DEER LUNG", "LIFEGUARD WHISTLE", "VERMILION WEBCAP", "UPSIDE DOWN RESIN", "UNKNOWN EGG", "LEPROSE LICHEN", "RED MOSS", "BLIGHT SERUM"];
+		killers[4] = demogorgon;
+		var doctor = ["MOLDY ELECTRODE", "MAPLE KNIGHT", "&quot;ORDER&quot; - CLASS I", "&quot;CALM&quot; - CLASS I", "POLISHED ELECTRODE", "&quot;RESTRAINT&quot; - CLASS II", "&quot;ORDER&quot; - CLASS II", "&quot;DISCIPLINE&quot; - CLASS II", "&quot;CALM&quot; - CLASS II", "SCRAPPED TONGUE", "INTERVIEW TAPE", "HIGH STIMULUS ELECTRODE", "&quot;RESTRAINT&quot; - CLASS III", "&quot;DISCIPLINE&quot; - CLASS III", "&quot;RESTRAINT&quot; - CARTER'S NOTES", "&quot;ORDER&quot; - CARTER'S NOTES", "&quot;DISCIPLINE&quot; - CARTER'S NOTES", "&quot;CALM&quot; - CARTER'S NOTES", "IRIDESCENT QUEEN", "IRIDESCENT KING", "BLIGHT SERUM"];
+		killers[5] = doctor;
+		var executioner = ["LEAD RING", "DEAD BUTTERFLY", "COPPER RING", "BLACK STRAP", "WAX DOLL", "SPEARHEAD", "LEOPARD-PRINT FABRIC", "FORGOTTEN VIDEOTAPE", "CINDERELLA'S MUSIC BOX", "VALTIEL SECT PHOTOGRAPH", "TABLET OF THE OPPRESSOR", "MISTY DAY, REMAINS OF JUDGEMENT", "MANNEQUIN FOOT", "BURNING MAN PAINTING", "SCARLET EGG", "RUST-COLOURED EGG", "LOST MEMORIES BOOK", "CRIMSON CEREMONY BOOK", "OBSIDIAN GOBLET", "IRIDESCENT SEAL OF METATRON", "BLIGHT SERUM"];
+		killers[6] = executioner;
+		var ghostface = ["&quot;PHILLY&quot;", "WALLEYES MATCHBOOK", "HEADLINES CUT-OUTS", "CHEAP COLOGNE", "TELEPHOTO LENS", "REUSUABLE CINCH STRAPS", "OLSEN'S JOURNAL", "OLSEN'S ADDRESS BOOK", "MARKED MAP", "OLSEN'S WALLET", "LEATHER KNIFE SHEATH", "LASTING PERFUME", "KNIFE BELT CLIP", "CHEWED PEN", "VICTIM'S DETAILED ROUTINE", "NIGHT VISION MONOCULAR", "DROP-LEG KNIFE SHEATH", "DRIVER'S LICENSE", "&quot;GHOST FACE CAUGHT ON TAPE&quot;", "OUTDOOR SECURITY CAMERA", "BLIGHT SERUM"];
+		killers[7] = ghostface;
+		var hag = ["ROPE NECKLET", "POWDERED EGGSHELL", "DEAD FLY MUD", "BOG WATER", "PUSSY WILLOW CATKINS", "HALF EGGSHELL", "DRAGONFLY WINGS", "CYPRESS NECKLET", "BLOODIED WATER", "WILLOW WREATH", "SWAMP ORCHID NECKLET", "DRIED CICADA", "CRACKED TURTLE EGG", "BLOODIED MUD", "SCARRED HAND", "RUSTY SHACKLES", "GRANDMA'S HEART", "DISFIGURED EAR", "WATERLOGGED SHOE", "MINT RAG", "BLIGHT SERUM"];
+		killers[8] = hag;
+		var hillbilly = ["STEEL TOE BOOTS", "JUNKYARD AIR FILTER", "HEAVY CLUTCH", "SPEED LIMITER", "DAD'S BOOTS", "PUNCTURED MUFFLER", "OFF-BRAND MOTOR OIL", "DEATH ENGRAVINGS", "BIG BUCKLE", "MOTHER'S HELPERS", "LOW KICKBACK CHAINS", "LEAFY MASH", "DOOM ENGRAVINGS", "BLACK GREASE", "TUNED CARBURETTOR", "SPIKED BOOTS", "PIGHOUSE GLOVES", "LOPRO CHAINS", "APEX MUFFLER", "IRIDESCENT BRICK", "BLIGHT SERUM"];
+		killers[9] = hillbilly;
+		var huntress = ["COARSE STONE", "BERUS TOXIN", "BANDAGED HAFT", "AMANITA TOXIN", "YEW SEED BREW", "SHINY PIN", "OAK HAFT", "MANNA GRASS BRAID", "LEATHER LOOP", "FINE STONE", "DEERSKIN GLOVES", "YEW SEED CONCOCTION", "VENOMOUS CONCOCTION", "RUSTY HEAD", "PUNGENT PHIAL", "FLOWER BABUSHKA", "INFANTRY BELT", "GLOWING CONCOCTION", "BEGRIMED HEAD", "IRIDESCENT HEAD", "BLIGHT SERUM"];
+		killers[10] = huntress;
+		var legion = ["SMILEY FACE PIN", "SCRATCHED RULER", "MISCHIEF LIST", "FRIENDSHIP BRACELET", "NEVER-SLEEP PILLS", "MURAL SKETCH", "JULIE'S MIX TAPE", "ETCHED RULER", "DEFACED SMILEY PIN", "THE LEGION PIN", "SUSIE'S MIXTAPE", "STOLEN SKETCH BOOK", "NASTY BLADE", "JOEY'S MIX TAPE", "STAB WOUNDS STUDY", "FRANK'S MIX TAPE", "FILTHY BLADE", "COLD DIRT", "IRIDESCENT BUTTON", "FUMING MIX TAPE", "BLIGHT SERUM"];
+		killers[11] = legion;
+		var nightmare = ["WOOL SHIRT", "SHEEP BLOCK", "KID'S DRAWING", "GARDEN RAKE", "PROTOTYPE CLAWS", "OUTDOOR ROPE", "NANCY'S SKETCH", "GREEN DRESS", "CAT BLOCK", "UNICORN BLOCK", "PAINT THINNER", "NANCY'S MASTERPIECE", "JUMP ROPE", "BLUE DRESS", "PILL BOTTLE", "SWING CHAINS", "CLASS PHOTO", "&quot;Z&quot; BLOCK", "RED PAINT BRUSH", "BLACK BOX", "BLIGHT SERUM"];
+		killers[12] = nightmare;
+		var nurse = ["WOODEN HORSE", "WHITE NIT COMB", "PLAID FLANNEL", "METAL SPOON", "POCKET WATCH", "DULL BRACELET", "DARK CINTURE", "CATATONIC BOY'S TREASURE", "BAD MAN KEEPSAKE", "SPASMODIC BREATH", "HEAVY PANTING", "FRAGILE WHEEZE", "ATAXIC RESPIRATION", "ANXIOUS GASP", "KAVANAGH'S LAST BREATH", "JENNER'S LAST BREATH", "CAMPELL'S LAST BREATH", "&quot;BAD MAN'S&quot; LAST BREATH", "TORN BOOKMARK", "MATCHBOX", "BLIGHT SERUM"];
+		killers[13] = nurse;
+		var oni = ["YAKUYOKE TALISMAN", "ROTTING ROPE", "CRACKED SAKAZUKI", "BLACKENED TOENAIL", "POLISHED MAEDATE", "INK LION", "CHIPPED SAIHAI", "CHILD'S WOODEN SWORD", "BLOODY SASH", "YAMAOKA SASHIMONO", "WOODEN ONI MASK", "SHATTERED WAKIZASHI", "SCALPED TOPKNOT", "KANAI-ANZEN TALISMAN", "TEAR SOAKED TENUGUI", "SPLINTERED HULL", "LION FANG", "AKITO'S CRUTCH", "RENJIRO'S BLOODY GLOVE", "IRIDESCENT FAMILY CREST", "BLIGHT SERUM"];
+		killers[14] = oni;
+		var pig = ["WORKSHOP GREASE", "SHATTERED SYRINGE", "JOHN'S MEDICAL FILE", "COMBAT STRAPS", "VIDEO TAPE", "UTILITY BLADES", "RAZOR WIRES", "LAST WILL", "FACE MASK", "SLOW-RELEASE TOXIN", "RUSTY ATTACHMENTS", "JIGSAW'S ANNOTATED PLAN", "INTERLOCKING RAZORS", "BAG OG GEARS", "TAMPERED TIMER", "JIGSAW'S SKETCH", "CRATE OF GEARS", "AMANDA'S SECRET", "RULE SET NO. 2", "AMANDA'S LETTER", "BLIGHT SERUM"];
+		killers[15] = pig
+		var plague = ["PRAYER TABLET FRAGMENT", "OLIBANUM INCENSE", "LIMESTONE SEAL", "HEALING SALVE", "PROPHYLACTIC AMULET", "POTENT TINCTURE", "HAEMATITE SEAL", "EMETIC POTION", "BLESSED APPLE", "RUBBING OIL", "INFECTED EMETIC", "INCENSED OINTMENT", "EXORCISM AMULET", "ASHEN APPLE", "WORSHIP TABLET", "VILE EMETIC", "SEVERED TOE", "DEVOTEE'S AMULET", "IRIDESCENT SEAL", "BLACK INCENSE", "BLIGHT SERUM"];
+		killers[16] = plague;
+		var shape = ["TACKY EARRINGS", "BOYFRIEND'S MEMO", "BLOND HAIR", "REFLECTIVE FRAGMENT", "MEMORIAL FLOWER", "JEWELRY","HAIR BRUSH", "GLASS FRAGMENT", "DEAD RABBIT", "MIRROR SHARD", "JUDITH'S JOURNAL", "JEWELRY BOX", "J. MYERS MEMORIAL", "HAIR BOW", "VANITY MIRROR", "TOMBSTONE PIECE", "SCRATCHED MIRROR", "LOCK OF HAIR", "JUDITH'S TOMBSTONE", "FRAGRANT TUFT OF HAIR", "BLIGHT SERUM"];
+		killers[17] = shape;
+		var spirit = ["ZORI", "SHIAWASE AMULET", "ORIGAMI CRANE", "GIFTED BAMBOO COMB", "WHITE HAIR RIBBON", "RIN'S BROKEN WATCH", "MUDDY SPORTS DAY CAP", "KAIUN TALISMAN", "JUNIPER BONSAI", "RUSTY FLUTE", "KATSUMORI TALISMAN", "KATANA TSUBA", "DIRTY UWABAKI", "BLOODY HAIR BROOCH", "YAKUYOKE AMULET", "WAKIZASHI SAYA", "PRAYER BEADS BRACELET", "DRIED CHERRY BLOSSOM", "MOTHER-DAUGHET RING", "FATHER'S GLASSES", "BLIGHT SERUM"];
+		killers[18] = spirit;
+		var trapper = ["TRAPPER SACK", "TRAPPER GLOVES", "STRONG COIL SPRING", "PADDED JAWS", "TRAPPER BAG", "TRAP SETTERS", "SERRATED JAWS", "LOGWOOD DYE", "4-COIL SPRING KIT", "WAX BRICK", "TAR BOTTLE", "SETTING TOOLS", "SECONDARY COIL", "RUSTED JAWS", "STITCHED BAG", "OILY COIL", "HONING STONE", "FASTENING TOOLS", "IRIDESCENT STONE", "BLOODY COIL", "BLIGHT SERUM"];
+		killers[19] = trapper;
+		var wraith = ["&quot;THE SERPENT&quot; - SOOT", "&quot;THE HOUND&quot; - SOOT", "&quot;THE GHOST&quot; - SOOT", "&quot;THE BEAST&quot; - SOOT", "BONE CLAPPER", "&quot;BLINK&quot; - MUD", "&quot;WINDSTORM&quot; - MUD", "&quot;SWIFT HUNT&quot; - MUD", "&quot;BLIND WARRIOR&quot; - MUD", "&quot;WINDSTORM&quot; - WHITE", "&quot;SWIFT HUNT&quot; - WHITE", "&quot;SHADOW DANCE&quot; - WHITE", "&quot;BLINK&quot; - WHITE", "&quot;BLIND WARRIOR&quot; - WHITE", "&quot;WINDSTORM&quot; - BLOOD", "&quot;SWIFT HUNT&quot; - BLOOD", "&quot;SHADOW DANCE&quot; - BLOOD", "&quot;ALL SEEING&quot; - BLOOD", "COXCOMBED CLAPPER", "&quot;ALL SEEING&quot; - SPIRIT", "BLIGHT SERUM"];
+		killers[20] = wraith;
+		
+		var pictures = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+		var blightP = ["url('K_AddOns/Blight/placebotablet.png')", "url('K_AddOns/Blight/foxglove.png')", "url('K_AddOns/Blight/compoundseven.png')", "url('K_AddOns/Blight/chippedmonocle.png')", "url('K_AddOns/Blight/shreddednotes.png')", "url('K_AddOns/Blight/pustuladust.png')", "url('K_AddOns/Blight/plaguebile.png')", "url('K_AddOns/Blight/cankerthorn.png')", "url('K_AddOns/Blight/blightedrat.png')", "url('K_AddOns/Blight/umbrasalts.png')", "url('K_AddOns/Blight/rosetonic.png')", "url('K_AddOns/Blight/compoundtwentyone.png')", "url('K_AddOns/Blight/blightedcrow.png')", "url('K_AddOns/Blight/adrenalinevial.png')", "url('K_AddOns/Blight/vigosjournal.png')", "url('K_AddOns/Blight/summoningstone.png')", "url('K_AddOns/Blight/soulchemical.png')", "url('K_AddOns/Blight/alchemistsring.png')", "url('K_AddOns/Blight/iridescentblighttag.png')", "url('K_AddOns/Blight/compoundthirtythree.png')", "url('K_AddOns/blightserum.png')"];
+		pictures[0] = blightP;
+		var cannibalP = ["url('K_AddOns/Cannibal/vegetableoil.png')", "url('K_AddOns/Cannibal/sparkplug.png')", "url('K_AddOns/Cannibal/speedlimiter.png')", "url('K_AddOns/Cannibal/chainsawfile.png')", "url('K_AddOns/Cannibal/longguidebar.png')", "url('K_AddOns/Cannibal/primerbulb.png')", "url('K_AddOns/Cannibal/knifescratches.png')", "url('K_AddOns/Cannibal/homemademuffler.png')", "url('K_AddOns/Cannibal/chilli.png')", "url('K_AddOns/Cannibal/thegrease.png')", "url('K_AddOns/Cannibal/thebeastsmarks.png')", "url('K_AddOns/Cannibal/shoplubricant.png')", "url('K_AddOns/Cannibal/grislychains.png')", "url('K_AddOns/Cannibal/begrimedchains.png')", "url('K_AddOns/Cannibal/rustedchains.png')", "url('K_AddOns/Cannibal/lightchassis.png')", "url('K_AddOns/Cannibal/depthgaugerake.png')", "url('K_AddOns/Cannibal/awardwinningchilli.png')", "url('K_AddOns/Cannibal/iridescentflesh.png')", "url('K_AddOns/Cannibal/carburettortuningguide.png')", "url('K_AddOns/blightserum.png')"];
+		pictures[1] = cannibalP;
+		var clownP = ["url('K_AddOns/Clown/smellyinnersoles.png')", "url('K_AddOns/Clown/robinfeather.png')", "url('K_AddOns/Clown/fingerlessparadegloves.png')", "url('K_AddOns/Clown/ether5vol.png')", "url('K_AddOns/Clown/thickcorkstopper.png')", "url('K_AddOns/Clown/stickysodabottle.png')", "url('K_AddOns/Clown/starlingfeather.png')", "url('K_AddOns/Clown/solventjug.png')", "url('K_AddOns/Clown/kerosenecan.png')", "url('K_AddOns/Clown/vhsporn.png')", "url('K_AddOns/Clown/sulphuricacidvial.png')", "url('K_AddOns/Clown/flaskofbleach.png')", "url('K_AddOns/Clown/ether10vol.png')", "url('K_AddOns/Clown/bottleofchloroform.png')", "url('K_AddOns/Clown/garishmakeupkit.png')", "url('K_AddOns/Clown/ether15vol.png')", "url('K_AddOns/Clown/cigarbox.png')", "url('K_AddOns/Clown/cheapginbottle.png')", "url('K_AddOns/Clown/tattoosmiddlefinger.png')", "url('K_AddOns/Clown/redheadspinkyfinger.png')", "url('K_AddOns/blightserum.png')"];
+		pictures[2] = clownP;
+		var deathslingerP = ["url('K_AddOns/Deathslinger/spitpolishrag.png')", "url('K_AddOns/Deathslinger/snakeoil.png')", "url('K_AddOns/Deathslinger/ricketychain.png')", "url('K_AddOns/Deathslinger/modifiedammobelt.png')", "url('K_AddOns/Deathslinger/rustedspike.png')", "url('K_AddOns/Deathslinger/poisonoakleaves.png')", "url('K_AddOns/Deathslinger/marshalsbadge.png')", "url('K_AddOns/Deathslinger/jawsmasher.png')", "url('K_AddOns/Deathslinger/chewingtobacco.png')", "url('K_AddOns/Deathslinger/wardenskeys.png')", "url('K_AddOns/Deathslinger/wantedposter.png')", "url('K_AddOns/Deathslinger/tinoilcan.png')", "url('K_AddOns/Deathslinger/honeylocustthorn.png')", "url('K_AddOns/Deathslinger/bayshoresgoldtooth.png')", "url('K_AddOns/Deathslinger/prisonchain.png')", "url('K_AddOns/Deathslinger/goldcreekwhiskey.png')", "url('K_AddOns/Deathslinger/bayshorescigar.png')", "url('K_AddOns/Deathslinger/barbedwire.png')", "url('K_AddOns/Deathslinger/iridescentcoin.png')", "url('K_AddOns/Deathslinger/hellshireiron.png')", "url('K_AddOns/blightserum.png')"];
+		pictures[3] = deathslingerP;
+		var demogorgonP = ["url('K_AddOns/Demogorgon/rottenpumpkin.png')", "url('K_AddOns/Demogorgon/blackheart.png')", "url('K_AddOns/Demogorgon/ratliver.png')", "url('K_AddOns/Demogorgon/rattail.png')", "url('K_AddOns/Demogorgon/stickylining.png')", "url('K_AddOns/Demogorgon/viscouswebbing.png')", "url('K_AddOns/Demogorgon/rottengreentripe.png')", "url('K_AddOns/Demogorgon/mewsguts.png')", "url('K_AddOns/Demogorgon/barbsglasses.png')", "url('K_AddOns/Demogorgon/elevenssoda.png')", "url('K_AddOns/Demogorgon/thornyvines.png')", "url('K_AddOns/Demogorgon/brasscaselighter.png')", "url('K_AddOns/Demogorgon/violetwaxcap.png')", "url('K_AddOns/Demogorgon/deerlung.png')", "url('K_AddOns/Demogorgon/lifeguardwhistle.png')", "url('K_AddOns/Demogorgon/vermilionwebcap.png')", "url('K_AddOns/Demogorgon/upsidedownresin.png')", "url('K_AddOns/Demogorgon/unknownegg.png')", "url('K_AddOns/Demogorgon/leproselichen.png')", "url('K_AddOns/Demogorgon/redmoss.png')", "url('K_AddOns/blightserum.png')"];
+		pictures[4] = demogorgonP;
+		var doctorP = ["url('K_AddOns/Doctor/moldyelectrode.png')", "url('K_AddOns/Doctor/mapleknight.png')", "url('K_AddOns/Doctor/orderc1.png')", "url('K_AddOns/Doctor/calmc1.png')", "url('K_AddOns/Doctor/polishedelectrode.png')", "url('K_AddOns/Doctor/restraintc2.png')", "url('K_AddOns/Doctor/orderc2.png')", "url('K_AddOns/Doctor/disciplinec2.png')", "url('K_AddOns/Doctor/calmc2.png')", "url('K_AddOns/Doctor/scrappedtape.png')", "url('K_AddOns/Doctor/interviewtape.png')", "url('K_AddOns/Doctor/highstimuluselectrode.png')", "url('K_AddOns/Doctor/restraintc3.png')", "url('K_AddOns/Doctor/disciplinec3.png')", "url('K_AddOns/Doctor/restraintcn.png')", "url('K_AddOns/Doctor/ordercn.png')", "url('K_AddOns/Doctor/disciplinecn.png')", "url('K_AddOns/Doctor/calmcn.png')", "url('K_AddOns/Doctor/iridescentqueen.png')", "url('K_AddOns/Doctor/iridescentking.png')"];
+		pictures[5] = doctorP;
+		var executionerP = ["url('K_AddOns/Executioner/leadring.png')", "url('K_AddOns/Executioner/deadbutterfly.png')", "url('K_AddOns/Executioner/copperring.png')", "url('K_AddOns/Executioner/blackstrap.png')", "url('K_AddOns/Executioner/waxdoll.png')", "url('K_AddOns/Executioner/spearhead.png')", "url('K_AddOns/Executioner/leopardprintfabric.png')", "url('K_AddOns/Executioner/forgottenvideotape.png')", "url('K_AddOns/Executioner/cinderellamusicbox.png')", "url('K_AddOns/Executioner/valtielsectphotograph.png')", "url('K_AddOns/Executioner/tabletoftheoppressor.png')", "url('K_AddOns/Executioner/mistyday.png')", "url('K_AddOns/Executioner/mannequinfoot.png')", "url('K_AddOns/Executioner/burningmanpainting.png')", "url('K_AddOns/Executioner/scarletegg.png')", "url('K_AddOns/Executioner/rustcolouredegg.png')", "url('K_AddOns/Executioner/lostmemoriesbook.png')", "url('K_AddOns/Executioner/crimsonceremonybook.png')", "url('K_AddOns/Executioner/obsidiangoblet.png')", "url('K_AddOns/Executioner/iridescentsealofmetatron.png')", "url('K_AddOns/blightserum.png')"];
+		pictures[6] = executionerP;
+		var ghostfaceP = ["url('K_AddOns/Ghost_Face/philly.png')", "url('K_AddOns/Ghost_Face/walleyesmatchbook.png')", "url('K_AddOns/Ghost_Face/headlinescutouts.png')", "url('K_AddOns/Ghost_Face/cheapcologne.png')", "url('K_AddOns/Ghost_Face/telephotolens.png')", "url('K_AddOns/Ghost_Face/reusuablecinchstraps.png')", "url('K_AddOns/Ghost_Face/olsensjournal.png')", "url('K_AddOns/Ghost_Face/olsensaddressbook.png')", "url('K_AddOns/Ghost_Face/markedmap.png')", "url('K_AddOns/Ghost_Face/olsenswallet.png')", "url('K_AddOns/Ghost_Face/leatherknifesheath.png')", "url('K_AddOns/Ghost_Face/lastingperfume.png')", "url('K_AddOns/Ghost_Face/knifebeltclip.png')", "url('K_AddOns/Ghost_Face/chewedpen.png')", "url('K_AddOns/Ghost_Face/victimsdetailedroutine.png')", "url('K_AddOns/Ghost_Face/nightvisionmonocular.png')", "url('K_AddOns/Ghost_Face/droplegknifesheath.png')", "url('K_AddOns/Ghost_Face/driverslicense.png')", "url('K_AddOns/Ghost_Face/caughtontape.png')", "url('K_AddOns/Ghost_Face/outdoorsecuritycamera.png')", "url('K_AddOns/blightserum.png')"];
+		pictures[7] = ghostfaceP;
+		var hagP = ["url('K_AddOns/Hag/ropenecklet.png')", "url('K_AddOns/Hag/powderedeggshell.png')", "url('K_AddOns/Hag/deadflymud.png')", "url('K_AddOns/Hag/bogwater.png')", "url('K_AddOns/Hag/pussywillowcatkins.png')", "url('K_AddOns/Hag/halfeggshell.png')", "url('K_AddOns/Hag/dragonflywings.png')", "url('K_AddOns/Hag/cypressnecklet.png')", "url('K_AddOns/Hag/bloodiedwater.png')", "url('K_AddOns/Hag/willowwreath.png')", "url('K_AddOns/Hag/swamporchidnecklet.png')", "url('K_AddOns/Hag/driedcicada.png')", "url('K_AddOns/Hag/crackedturtleegg.png')", "url('K_AddOns/Hag/bloodiedmud.png')", "url('K_AddOns/Hag/scarredhand.png')", "url('K_AddOns/Hag/rustyshackles.png')", "url('K_AddOns/Hag/grandmasheart.png')", "url('K_AddOns/Hag/disfiguredear.png')", "url('K_AddOns/Hag/waterloggedshoe.png')", "url('K_AddOns/Hag/mintrag.png')", "url('K_AddOns/blightserum.png')"];
+		pictures[8] = hagP;
+		var hillbillyP = ["url('K_AddOns/Hillbilly/steeltoeboots.png')", "url('K_AddOns/Hillbilly/junkyardairfilter.png')", "url('K_AddOns/Hillbilly/heavyclutch.png')", "url('K_AddOns/Hillbilly/speedlimiter.png')", "url('K_AddOns/Hillbilly/dadsboots.png')", "url('K_AddOns/Hillbilly/puncturedmuffler.png')", "url('K_AddOns/Hillbilly/offbrandmotoroil.png')", "url('K_AddOns/Hillbilly/deathengravings.png')", "url('K_AddOns/Hillbilly/bigbuckle.png')", "url('K_AddOns/Hillbilly/mothershelpers.png')", "url('K_AddOns/Hillbilly/lowkickbackchains.png')", "url('K_AddOns/Hillbilly/leafymash.png')", "url('K_AddOns/Hillbilly/doomengravings.png')", "url('K_AddOns/Hillbilly/blackgrease.png')", "url('K_AddOns/Hillbilly/tunedcarburettor.png')", "url('K_AddOns/Hillbilly/spikedboots.png')", "url('K_AddOns/Hillbilly/pighousegloves.png')", "url('K_AddOns/Hillbilly/loprochains.png')", "url('K_AddOns/Hillbilly/apexmuffler.png')", "url('K_AddOns/Hillbilly/iridescentbrick.png')", "url('K_AddOns/blightserum.png')"];
+		pictures[9] = hillbillyP;
+		var huntressP = ["url('K_AddOns/Huntress/coarsestone.png')", "url('K_AddOns/Huntress/berustoxin.png')", "url('K_AddOns/Huntress/bandagedhaft.png')", "url('K_AddOns/Huntress/amanitatoxin.png')", "url('K_AddOns/Huntress/yewseedbrew.png')", "url('K_AddOns/Huntress/shinypin.png')", "url('K_AddOns/Huntress/oakhaft.png')", "url('K_AddOns/Huntress/mannagrassbraid.png')", "url('K_AddOns/Huntress/leatherloop.png')", "url('K_AddOns/Huntress/finestone.png')", "url('K_AddOns/Huntress/deerskingloves.png')", "url('K_AddOns/Huntress/yewseedconcoction.png')", "url('K_AddOns/Huntress/venomousconcoction.png')", "url('K_AddOns/Huntress/rustyhead.png')", "url('K_AddOns/Huntress/pungentphial.png')", "url('K_AddOns/Huntress/flowerbabushka.png')", "url('K_AddOns/Huntress/infantrybelt.png')", "url('K_AddOns/Huntress/glowingconcoction.png')", "url('K_AddOns/Huntress/begrimedhead.png')", "url('K_AddOns/Huntress/iridescenthead.png')", "url('K_AddOns/blightserum.png')"];
+		pictures[10] = huntressP;
+		var legionP = ["url('K_AddOns/Legion/smileyfacepin.png')", "url('K_AddOns/Legion/scratchedruler.png')", "url('K_AddOns/Legion/mischieflist.png')", "url('K_AddOns/Legion/friendshipbracelet.png')", "url('K_AddOns/Legion/neversleeppills.png')", "url('K_AddOns/Legion/muralsketch.png')", "url('K_AddOns/Legion/juliesmixtape.png')", "url('K_AddOns/Legion/etchedruler.png')", "url('K_AddOns/Legion/defacedsmileypin.png')", "url('K_AddOns/Legion/thelegionpin.png')", "url('K_AddOns/Legion/susiesmixtape.png')", "url('K_AddOns/Legion/stolensketchbook.png')", "url('K_AddOns/Legion/nastyblade.png')", "url('K_AddOns/Legion/joeysmixtape.png')", "url('K_AddOns/Legion/stabwoundsstudy.png')", "url('K_AddOns/Legion/franksmixtape.png')", "url('K_AddOns/Legion/filthyblade.png')", "url('K_AddOns/Legion/colddirt.png')", "url('K_AddOns/Legion/iridescentbutton.png')", "url('K_AddOns/Legion/fumingmixtape.png')", "url('K_AddOns/blightserum.png')"];
+		pictures[11] = legionP;
+		var nightmareP = ["url('K_AddOns/Nightmare/woolshirt.png')", "url('K_AddOns/Nightmare/sheepblock.png')", "url('K_AddOns/Nightmare/kidsdrawing.png')", "url('K_AddOns/Nightmare/gardenrake.png')", "url('K_AddOns/Nightmare/prototypeclaws.png')", "url('K_AddOns/Nightmare/outdoorrope.png')", "url('K_AddOns/Nightmare/nancyssketch.png')", "url('K_AddOns/Nightmare/greendress.png')", "url('K_AddOns/Nightmare/catblock.png')", "url('K_AddOns/Nightmare/unicornblock.png')", "url('K_AddOns/Nightmare/paintthinner.png')", "url('K_AddOns/Nightmare/nancysmasterpiece.png')", "url('K_AddOns/Nightmare/jumprope.png')", "url('K_AddOns/Nightmare/bluedress.png')", "url('K_AddOns/Nightmare/pillbottle.png')", "url('K_AddOns/Nightmare/swingchains.png')", "url('K_AddOns/Nightmare/classphoto.png')", "url('K_AddOns/Nightmare/zblock.png')", "url('K_AddOns/Nightmare/redpaintbrush.png')", "url('K_AddOns/Nightmare/blackbox.png')", "url('K_AddOns/blightserum.png')"];
+		pictures[12] = nightmareP;
+		var nurseP = ["url('K_AddOns/Nurse/woodenhorse.png')", "url('K_AddOns/Nurse/whitenitcomb.png')", "url('K_AddOns/Nurse/plaidflannel.png')", "url('K_AddOns/Nurse/metalspoon.png')", "url('K_AddOns/Nurse/pocketwatch.png')", "url('K_AddOns/Nurse/dullbracelet.png')", "url('K_AddOns/Nurse/darkcinture.png')", "url('K_AddOns/Nurse/catatonicboystreasure.png')", "url('K_AddOns/Nurse/badmankeepsake.png')", "url('K_AddOns/Nurse/spasmodicbreath.png')", "url('K_AddOns/Nurse/heavypanting.png')", "url('K_AddOns/Nurse/fragilewheeze.png')", "url('K_AddOns/Nurse/ataxicrespiration.png')", "url('K_AddOns/Nurse/anxiousgasp.png')", "url('K_AddOns/Nurse/kavanaghslastbreath.png')", "url('K_AddOns/Nurse/jennerslastbreath.png')", "url('K_AddOns/Nurse/campbellslastbreath.png')", "url('K_AddOns/Nurse/badmanslastbreath.png')", "url('K_AddOns/Nurse/tornbookmark.png')", "url('K_AddOns/Nurse/matchbox.png')", "url('K_AddOns/blightserum.png')"];
+		pictures[13] = nurseP;
+		var oniP = ["url('K_AddOns/Oni/yakuyoketalisman.png')", "url('K_AddOns/Oni/rottingrope.png')", "url('K_AddOns/Oni/crackedsakazuki.png')", "url('K_AddOns/Oni/blackenedtoenail.png')", "url('K_AddOns/Oni/polishedmaedate.png')", "url('K_AddOns/Oni/inklion.png')", "url('K_AddOns/Oni/chippedsaihai.png')", "url('K_AddOns/Oni/childswoodensword.png')", "url('K_AddOns/Oni/bloodysash.png')", "url('K_AddOns/Oni/yamaokasashimono.png')", "url('K_AddOns/Oni/woodenonimask.png')", "url('K_AddOns/Oni/shatteredwakizashi.png')", "url('K_AddOns/Oni/scalpedtopknot.png')", "url('K_AddOns/Oni/kanaianzentalisman.png')", "url('K_AddOns/Oni/tearsoakedtenugui.png')", "url('K_AddOns/Oni/splinteredhull.png')", "url('K_AddOns/Oni/lionfang.png')", "url('K_AddOns/Oni/akitoscrutch.png')", "url('K_AddOns/Oni/renjirosbloodyglove.png')", "url('K_AddOns/Oni/iridescentfamilycrest.png')", "url('K_AddOns/blightserum.png')"];
+		pictures[14] = oniP;
+		var pigP = ["url('K_AddOns/Pig/workshopgrease.png')", "url('K_AddOns/Pig/shatteredsyringe.png')", "url('K_AddOns/Pig/johnsmedicalfile.png')", "url('K_AddOns/Pig/combatstraps.png')", "url('K_AddOns/Pig/videotape.png')", "url('K_AddOns/Pig/utilityblades.png')", "url('K_AddOns/Pig/razorwires.png')", "url('K_AddOns/Pig/lastwill.png')", "url('K_AddOns/Pig/facemask.png')", "url('K_AddOns/Pig/slowreleasetoxin.png')", "url('K_AddOns/Pig/rustyattachments.png')", "url('K_AddOns/Pig/jigsawsannotatedplan.png')", "url('K_AddOns/Pig/interlockingrazor.png')", "url('K_AddOns/Pig/bagofgears.png')", "url('K_AddOns/Pig/tamperedtimer.png')", "url('K_AddOns/Pig/jigsawssketch.png')", "url('K_AddOns/Pig/crateofgears.png')", "url('K_AddOns/Pig/amandassecret.png')", "url('K_AddOns/Pig/rulesetno2.png')", "url('K_AddOns/Pig/amandasletter.png')", "url('K_AddOns/blightserum.png')"];
+		pictures[15] = pigP;
+		var plagueP = ["url('K_AddOns/Plague/prayertabletfragment.png')", "url('K_AddOns/Plague/olibanumincense.png')", "url('K_AddOns/Plague/limestoneseal.png')", "url('K_AddOns/Plague/healingsalve.png')", "url('K_AddOns/Plague/prophylacticamulet.png')", "url('K_AddOns/Plague/potenttincture.png')", "url('K_AddOns/Plague/haematiteseal.png')", "url('K_AddOns/Plague/emeticpotion.png')", "url('K_AddOns/Plague/blessedapple.png')", "url('K_AddOns/Plague/rubbingoil.png')", "url('K_AddOns/Plague/infectedemetic.png')", "url('K_AddOns/Plague/incensedointment.png')", "url('K_AddOns/Plague/exorcismamulet.png')", "url('K_AddOns/Plague/ashenapple.png')", "url('K_AddOns/Plague/worshiptablet.png')", "url('K_AddOns/Plague/vileemetic.png')", "url('K_AddOns/Plague/severedtoe.png')", "url('K_AddOns/Plague/devoteesamulet.png')", "url('K_AddOns/Plague/iridescentseal.png')", "url('K_AddOns/Plague/blackincense.png')", "url('K_AddOns/blightserum.png')"];
+		pictures[16] = plagueP;
+		var shapeP = ["url('K_AddOns/Shape/tackyearrings.png')", "url('K_AddOns/Shape/boyfriendsmemo.png')", "url('K_AddOns/Shape/blondehair.png')", "url('K_AddOns/Shape/reflectivefragment.png')", "url('K_AddOns/Shape/memorialflower.png')", "url('K_AddOns/Shape/jewelry.png')", "url('K_AddOns/Shape/hairbrush.png')", "url('K_AddOns/Shape/glassfragment.png')", "url('K_AddOns/Shape/deadrabbit.png')", "url('K_AddOns/Shape/mirrorshard.png')", "url('K_AddOns/Shape/judithsjournal.png')", "url('K_AddOns/Shape/jewelrybox.png')", "url('K_AddOns/Shape/jmyersmemorial.png')", "url('K_AddOns/Shape/hairbow.png')", "url('K_AddOns/Shape/vanitymirror.png')", "url('K_AddOns/Shape/tombstonepiece.png')", "url('K_AddOns/Shape/scratchedmirror.png')", "url('K_AddOns/Shape/lockofhair.png')", "url('K_AddOns/Shape/judithstombstone.png')", "url('K_AddOns/Shape/fragranttuftofhair.png')", "url('K_AddOns/blightserum.png')"];
+		pictures[17] = shapeP;
+		var spiritP = ["url('K_AddOns/Spirit/zori.png')", "url('K_AddOns/Spirit/shiawaseamulet.png')", "url('K_AddOns/Spirit/origamicrane.png')", "url('K_AddOns/Spirit/giftedbamboocomb.png')", "url('K_AddOns/Spirit/whitehairribbon.png')", "url('K_AddOns/Spirit/rinsbrokenwatch.png')", "url('K_AddOns/Spirit/muddysportsdaycap.png')", "url('K_AddOns/Spirit/kaiuntalisman.png')", "url('K_AddOns/Spirit/juniperbonsai.png')", "url('K_AddOns/Spirit/rustyflute.png')", "url('K_AddOns/Spirit/katsumoritalisman.png')", "url('K_AddOns/Spirit/katanatsuba.png')", "url('K_AddOns/Spirit/dirtyuwabaki.png')", "url('K_AddOns/Spirit/bloodyhairbrooch.png')", "url('K_AddOns/Spirit/yakuyokeamulet.png')", "url('K_AddOns/Spirit/wakizashisaya.png')", "url('K_AddOns/Spirit/prayerbeadsbracelet.png')", "url('K_AddOns/Spirit/driedcherryblossom.png')", "url('K_AddOns/Spirit/motherdaughterring.png')", "url('K_AddOns/Spirit/fathersglasses.png')", "url('K_AddOns/blightserum.png')"];
+		pictures[18] = spiritP;
+		var trapperP = ["url('K_AddOns/Trapper/trappersack.png')", "url('K_AddOns/Trapper/trappergloves.png')", "url('K_AddOns/Trapper/strongcoilspring.png')", "url('K_AddOns/Trapper/paddedjaws.png')", "url('K_AddOns/Trapper/trapperbag.png')", "url('K_AddOns/Trapper/trapsetters.png')", "url('K_AddOns/Trapper/serratedjaws.png')", "url('K_AddOns/Trapper/logwooddye.png')", "url('K_AddOns/Trapper/4coilspringkit.png')", "url('K_AddOns/Trapper/waxbrick.png')", "url('K_AddOns/Trapper/tarbottle.png')", "url('K_AddOns/Trapper/settingtools.png')", "url('K_AddOns/Trapper/secondarycoil.png')", "url('K_AddOns/Trapper/rustedjaws.png')", "url('K_AddOns/Trapper/stitchedbag.png')", "url('K_AddOns/Trapper/oilycoil.png')", "url('K_AddOns/Trapper/honingstone.png')", "url('K_AddOns/Trapper/fasteningtools.png')", "url('K_AddOns/Trapper/iridescentstone.png')", "url('K_AddOns/Trapper/bloodycoil.png')", , "url('K_AddOns/blightserum.png')"];
+		pictures[19] = trapperP;
+		var wraithP = ["url('K_AddOns/Wraith/serpents.png')", "url('K_AddOns/Wraith/hounds.png')", "url('K_AddOns/Wraith/ghosts.png')", "url('K_AddOns/Wraith/beasts.png')", "url('K_AddOns/Wraith/boneclapper.png')", "url('K_AddOns/Wraith/blinkm.png')", "url('K_AddOns/Wraith/windstormm.png')", "url('K_AddOns/Wraith/swifthuntm.png')", "url('K_AddOns/Wraith/blindwarriorm.png')", "url('K_AddOns/Wraith/windstormw.png')", "url('K_AddOns/Wraith/swifthuntw.png')", "url('K_AddOns/Wraith/shadowdancew.png')", "url('K_AddOns/Wraith/blinkw.png')", "url('K_AddOns/Wraith/blindwarriorw.png')", "url('K_AddOns/Wraith/windstormb.png')", "url('K_AddOns/Wraith/swifthuntb.png')", "url('K_AddOns/Wraith/shadowdanceb.png')", "url('K_AddOns/Wraith/allseingb.png')", "url('K_AddOns/Wraith/coxcombedclapper.png')", "url('K_AddOns/Wraith/allseeings.png')", "url('K_AddOns/blightserum.png')"];
+		pictures[20] = wraithP;
+			
+		var x, i, l;
+		x = document.getElementsByClassName("names");
+		y = document.getElementsByClassName("imgs");
+		l = x.length;
+		for(i = 0; i < l; i++){
+			pNames.push(x[i].innerHTML);
+		}
+		for(i = 0; i < l; i++){
+			pNamesCopy.push(x[i].innerHTML);
+		}
+		
+		function clickChange(elmnt){
+			var isOn = false;
+			var j;
+			var itemId = elmnt.id;
+			for(j = 0; j < pNames.length; j++){
+				if(pNames[j] == itemId){
+					isOn = true;
+				}
+			}
+			if(isOn == true){
+				elmnt.style.borderColor = "red";
+				var index = pNames.indexOf(itemId);
+				pNames.splice(index, 1);
+				isOn = false;
+			}
+			else{
+				elmnt.style.borderColor = "white";
+				pNames.push(itemId);
+			}
+			
+		}
+		
+		function reset(){
+			pNames = pNamesCopy;
+			for(i = 0; i < l; i++){
+				y[i].style.borderColor = "white";
+			}
+			for (var z = 0; z < 4; z++){
+				document.getElementById(z).style.backgroundImage = null;
+				document.getElementById(randNames[z]).innerHTML = null;
+			}
+			document.getElementById("s0").innerHTML = null;
+			document.getElementById("s1").innerHTML = null;
+			document.getElementById("p0").style.backgroundImage = null;
+			document.getElementById("p1").style.backgroundImage = null;
+		}
+		
+		function roll(){
+			if(pNames.length <= 3){
+				alert("Please select 4 or more perks");
+			}
+			else{
+				randArr = [];
+				for(var z = 0; z < pNames.length; z++){
+					randArr.push(pNames[z]);
+				}
+				for(var z = 0; z < 4; z++){
+					var tempRan = rand();
+					document.getElementById(z).style.backgroundImage = document.getElementById(randArr[tempRan]).style.backgroundImage;
+					document.getElementById(randNames[z]).innerHTML = randArr[tempRan];
+					randArr.splice(tempRan, 1);
+				}
+				
+				var e = document.getElementById("killer");
+				var sel = e.selectedIndex;
+				if(sel != 0){
+					if(sel == 1){
+						sel = Math.floor((Math.random() * 20) + 2);
+						e.selectedIndex = sel;
+					}
+					var tempArr = [];
+					for(var i = 0; i < killers[sel-2].length; i++){
+						tempArr.push(killers[sel-2][i]);
+					}
+					var tempArrP = [];
+					for(var i = 0; i < pictures[sel-2].length; i++){
+						tempArrP.push(pictures[sel-2][i]);
+					}
+					ran = (Math.floor(Math.random() * tempArr.length));
+					document.getElementById("s0").innerHTML = tempArr[ran];
+					document.getElementById("p0").style.backgroundImage = tempArrP[ran];
+					tempArr.splice[ran, 1];
+					tempArrP.splice[ran, 1];
+					ran = (Math.floor(Math.random() * tempArr.length));
+					document.getElementById("s1").innerHTML = tempArr[ran];
+					document.getElementById("p1").style.backgroundImage = tempArrP[ran];
+				}
+			}
+		}
+		
+		function rand(){
+			var ran = (Math.floor(Math.random() * randArr.length));
+			return(ran);
+		}
+		
+</script>
+</body>
+
+</html>
+

@@ -1,0 +1,808 @@
+<!doctype html>
+<html>
+<head>
+<style>
+	body{
+		background-color: black;
+		color: white;
+		font-family: "Times New Roman", Times, serif;
+	}
+	h1{
+		width: 100%;
+		display: block;
+		text-align: center;
+		background-image: url('banner.jpg');
+		line-height: 60px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+  	.image-list-small {
+  		font-family: Arial, Helvetica, sans-serif;
+  		margin: 0 auto;
+  		text-align: center;
+  		max-width: 1170px;
+  		padding: 0;
+	}
+	.image-list-small li {
+  		display: inline-block;
+  		width: 181px;
+  		margin: 0 6px 20px;
+	}	
+	/* Photo */
+	.image-list-small li > span {
+  		display: block;
+  		text-decoration: none;
+  		background-size: contain;
+  		background-repeat: no-repeat;
+		background-position: center;
+  		height: 137px;
+  		margin: 0;
+  		padding: 0;
+  		border-width: 4px;
+  		border-style: solid;
+  		border-color: white;
+  		outline: 1px solid #d0d0d0;
+  		box-shadow: 0 2px 1px #DDD;
+	}
+	.image-list-small .details {
+  		margin-top: 13px;
+	}
+		/* Title */
+	.image-list-small .details h3 {
+  		display: block;
+  		font-size: 12px;
+  		margin: 0 0 3px 0;
+  		white-space: nowrap;
+  		overflow: hidden;
+  		text-overflow: ellipsis;
+	}
+	.image-list-small .details h3 span {
+  		color: white;
+  		text-decoration: none;
+	}
+	.image-list-small .details .image-author {
+  		display: block;
+  		color: #717171;
+  		font-size: 11px;
+  		font-weight: normal;
+  		margin: 0;
+	}
+	
+	.navbar {
+  		list-style-type: none;
+  		margin: 0;
+  		padding: 0;
+  		overflow: hidden;
+  		background-color: #333;
+  		position: -webkit-sticky; /* Safari */
+  		position: sticky;
+  		top: 0;
+	}
+
+	.nav-item {
+  		float: left;
+	}
+
+	.nav-item a {
+  		display: block;
+  		color: white;
+  		text-align: center;
+  		padding: 14px 16px;
+  		text-decoration: none;
+	}
+
+	.nav-item a:hover {
+  		background-color: #111;
+	}
+
+	.active {
+  		background-color: red;
+	}
+</style>
+<meta charset="utf-8">
+<title>Survivor Loadout</title>
+</head>
+
+<body>
+	<h1>DEAD BY DAYLIGHT &#8482 : <span style = "color: red;">LOADOUT ROULETTE</span></h1>
+	<ul class = "navbar">
+  		<li class = "nav-item"><a href= "home.html">HOME</a></li>
+  		<li class = "nav-item"><a class = "active" href= "#survivor.html">SURVIVOR</a></li>
+		<li class = "nav-item"><a href = "killer.html">KILLER</a></li>
+  		<li class = "nav-item"><a href= "https://deadbydaylight.gamepedia.com/Perks">PERKS</a></li>
+		<li class = "nav-item"><a href= "https://deadbydaylight.gamepedia.com/Add-ons">ADD-ONS</a></li>
+  		<li class = "nav-item"><a href= "https://deadbydaylight.gamepedia.com/Items">ITEMS</a></li>
+		<li class = "nav-item"><a href= "https://deadbydaylight.gamepedia.com/Offerings">OFFERINGS</a></li>
+	</ul>
+	<h2 id = "demo" style = "text-align: center;">SURVIVOR LOADOUT</h2>
+	<ul class="image-list-small">
+<li>
+  <span id = "0" style="border-color: white;"></span>
+  <div class="details">
+    <h3><span id = "n0"></span></h3>
+    <p class="image-author"></p>
+  </div>
+</li>
+<li>
+  <span id = "1" style="border-color: white;"></span>
+  <div class="details">
+    <h3><span id = "n1"></span></h3>
+    <p class="image-author"></p>
+  </div>
+</li>
+<li>
+  <span id = "2" style="border-color: white;"></span>
+  <div class="details">
+    <h3><span id = "n2"></span></h3>
+    <p class="image-author"></p>
+  </div>
+</li>
+<li>
+  <span id = "3" style="border-color: white;"></span>
+  <div class="details">
+    <h3><span id = "n3"></span></h3>
+    <p class="image-author"></p>
+  </div>
+</li>
+	</ul>
+	
+	<button type = "button" onclick="roll()" style = "display: block; margin-left: auto; margin-right: auto; width: 200px; height: 30px">ROLL</button>
+	<button type = "button" onclick="reset()" style = "display: block; margin-left: auto; margin-right: auto; width: 200px; height: 30px">RESET</button>
+	<br>
+	
+	<ul class="image-list-small">
+<li>
+  <span id = "ACE IN THE HOLE" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/aceinthehole.png');"></span>
+  <div class="details">
+    <h3><span class = "names">ACE IN THE HOLE</span></h3>
+    <p class="image-author">ACE VISCONTI</p>
+  </div>
+</li>
+<li>
+  <span id = "ADRENALINE" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/adrenaline.png');"></span>
+  <div class="details">
+    <h3><span class = "names">ADRENALINE</span></h3>
+    <p class="image-author">MEG THOMAS</p>
+  </div>
+</li>
+<li>
+  <span id = "AFTERCARE" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/aftercare.png');"></span>
+  <div class="details">
+    <h3><span class = "names">AFTERCARE</span></h3>
+    <p class="image-author">JEFF JOHANSEN</p>
+  </div>
+</li>
+<li>
+  <span id = "ALERT" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/alert.png');"></span>
+  <div class="details">
+    <h3><span class = "names">ALERT</span></h3>
+    <p class="image-author">FENG MIN</p>
+  </div>
+</li>
+<li>
+  <span id = "ANY MEANS NECESSARY" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/anymeansnecessary.png');"></span>
+  <div class="details">
+    <h3><span class = "names">ANY MEANS NECESSARY</span></h3>
+    <p class="image-author">YUI KIMURA</p>
+  </div>
+</li>
+<li>
+  <span id = "AUTODIDACT" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/autodidact.png');"></span>
+  <div class="details">
+    <h3><span class = "names">AUTODIDACT</span></h3>
+    <p class="image-author">ADAM FRANCIS</p>
+  </div>
+</li>
+<li>
+  <span id = "BABYSITTER" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/babysitter.png');"></span>
+  <div class="details">
+    <h3><span class = "names">BABYSITTER</span></h3>
+    <p class="image-author">STEVE HARRINGTON</p>
+  </div>
+</li>
+<li>
+  <span id = "BALANCED LANDING" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/balancedlanding.png');"></span>
+  <div class="details">
+    <h3><span class = "names">BALANCED LANDING</span></h3>
+    <p class="image-author">NEA KARLSSON</p>
+  </div>
+</li>
+<li>
+  <span id = "BETTER TOGETHER" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/bettertogether.png');"></span>
+  <div class="details">
+    <h3><span class = "names">BETTER TOGETHER</span></h3>
+    <p class="image-author">NANCY WHEELER</p>
+  </div>
+</li>
+<li>
+  <span id = "BLOOD PACT" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/bloodpact.png');"></span>
+  <div class="details">
+    <h3><span class = "names">BLOOD PACT</span></h3>
+    <p class="image-author">CHERYL MASON</p>
+  </div>
+</li>
+<li>
+  <span id = "BOIL OVER" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/boilover.png');"></span>
+  <div class="details">
+    <h3><span class = "names">BOIL OVER</span></h3>
+    <p class="image-author">KATE DENSON</p>
+  </div>
+</li>
+<li>
+  <span id = "BOND" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/bond.png');"></span>
+  <div class="details">
+    <h3><span class = "names">BOND</span></h3>
+    <p class="image-author">DWIGHT FAIRFIELD</p>
+  </div>
+</li>
+<li>
+  <span id = "BORROWED TIME" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/borrowedtime.png');"></span>
+  <div class="details">
+    <h3><span class = "names">BORROWED TIME</span></h3>
+    <p class="image-author">BILL OVERBECK</p>
+  </div>
+</li>
+<li>
+  <span id = "BOTANY KNOWLEDGE" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/botanyknowledge.png');"></span>
+  <div class="details">
+    <h3><span class = "names">BOTANY KNOWLEDGE</span></h3>
+    <p class="image-author">CLAUDETTE MOREL</p>
+  </div>
+</li>
+<li>
+  <span id = "BREAKDOWN" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/breakdown.png');"></span>
+  <div class="details">
+    <h3><span class = "names">BREAKDOWN</span></h3>
+    <p class="image-author">JEFF JOHANSEN</p>
+  </div>
+</li>
+<li>
+  <span id = "BREAKOUT" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/breakout.png');"></span>
+  <div class="details">
+    <h3><span class = "names">BREAKOUT</span></h3>
+    <p class="image-author">YUI KIMURA</p>
+  </div>
+</li>
+<li>
+  <span id = "BUCKLE UP" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/buckleup.png');"></span>
+  <div class="details">
+    <h3><span class = "names">BUCKLE UP</span></h3>
+    <p class="image-author">ASH WILLIAMS</p>
+  </div>
+</li>
+<li>
+  <span id = "BUILT TO LAST" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/builttolast.png');"></span>
+  <div class="details">
+    <h3><span class = "names">BUILT TO LAST</span></h3>
+    <p class="image-author">FELIX RICHTER</p>
+  </div>
+</li>
+<li>
+  <span id = "CALM SPIRIT" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/calmspirit.png');"></span>
+  <div class="details">
+    <h3><span class = "names">CALM SPIRIT</span></h3>
+    <p class="image-author">JAKE PARK</p>
+  </div>
+</li>
+<li>
+  <span id = "CAMARADERIE" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/camaraderie.png');"></span>
+  <div class="details">
+    <h3><span class = "names">CAMARADERIE</span></h3>
+    <p class="image-author">STEVE HARRINGTON</p>
+  </div>
+</li>
+<li>
+  <span id = "DANCE WITH ME" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/dancewithme.png');"></span>
+  <div class="details">
+    <h3><span class = "names">DANCE WITH ME</span></h3>
+    <p class="image-author">KATE DENSON</p>
+  </div>
+</li>
+<li>
+  <span id = "DARK SENSE" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/darksense.png');"></span>
+  <div class="details">
+    <h3><span class = "names">DARK SENSE</span></h3>
+    <p class="image-author">ALL</p>
+  </div>
+</li>
+<li>
+  <span id = "DEAD HARD" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/deadhard.png');"></span>
+  <div class="details">
+    <h3><span class = "names">DEAD HARD</span></h3>
+    <p class="image-author">DAVID KING</p>
+  </div>
+</li>
+<li>
+  <span id = "DECISIVE STRIKE" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/decisivestrike.png');"></span>
+  <div class="details">
+    <h3><span class = "names">DECISIVE STRIKE</span></h3>
+    <p class="image-author">LAURIE STRODE</p>
+  </div>
+</li>
+<li>
+  <span id = "DEJA VU" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/dejavu.png');"></span>
+  <div class="details">
+    <h3><span class = "names">DEJA VU</span></h3>
+    <p class="image-author">ALL</p>
+  </div>
+</li>
+<li>
+  <span id = "DELIVERANCE" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/deliverance.png');"></span>
+  <div class="details">
+    <h3><span class = "names">DELIVERANCE</span></h3>
+    <p class="image-author">ADAM FRANCIS</p>
+  </div>
+</li>
+<li>
+  <span id = "DESPERATE MEASURES" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/desperatemeasures.png');"></span>
+  <div class="details">
+    <h3><span class = "names">DESPERATE MEASURES</span></h3>
+    <p class="image-author">FELIX RICHTER</p>
+  </div>
+</li>
+<li>
+  <span id = "DETECTIVE'S HUNCH" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/detectiveshunch.png');"></span>
+  <div class="details">
+    <h3><span class = "names">DETECTIVE'S HUNCH</span></h3>
+    <p class="image-author">DETECTIVE TAPP</p>
+  </div>
+</li>
+<li>
+  <span id = "DISTORTION" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/distortion.png');"></span>
+  <div class="details">
+    <h3><span class = "names">DISTORTION</span></h3>
+    <p class="image-author">JEFF JOHANSEN</p>
+  </div>
+</li>
+<li>
+  <span id = "DIVERSION" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/diversion.png');"></span>
+  <div class="details">
+    <h3><span class = "names">DIVERSION</span></h3>
+    <p class="image-author">ADAM FRANCIS</p>
+  </div>
+</li>
+<li>
+  <span id = "EMPATHY" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/empathy.png');"></span>
+  <div class="details">
+    <h3><span class = "names">EMPATHY</span></h3>
+    <p class="image-author">CLAUDETTE MOREL</p>
+  </div>
+</li>
+<li>
+  <span id = "FIXATED" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/fixated.png');"></span>
+  <div class="details">
+    <h3><span class = "names">FIXATED</span></h3>
+    <p class="image-author">NANCY WHEELER</p>
+  </div>
+</li>
+<li>
+  <span id = "FLIP FLOP" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/flipflop.png');"></span>
+  <div class="details">
+    <h3><span class = "names">FLIP FLOP</span></h3>
+    <p class="image-author">ASH WILLIAMS</p>
+  </div>
+</li>
+<li>
+  <span id = "FOR THE PEOPLE" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/forthepeople.png');"></span>
+  <div class="details">
+    <h3><span class = "names">FOR THE PEOPLE</span></h3>
+    <p class="image-author">ZARINA KASSIR</p>
+  </div>
+</li>
+<li>
+  <span id = "HEAD ON" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/headon.png');"></span>
+  <div class="details">
+    <h3><span class = "names">HEAD ON</span></h3>
+    <p class="image-author">JANE ROMERO</p>
+  </div>
+</li>
+<li>
+  <span id = "HOPE" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/hope.png');"></span>
+  <div class="details">
+    <h3><span class = "names">HOPE</span></h3>
+    <p class="image-author">ALL</p>
+  </div>
+</li>
+<li>
+  <span id = "INNER STRENGTH" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/innerstrength.png');"></span>
+  <div class="details">
+    <h3><span class = "names">INNER STRENGTH</span></h3>
+    <p class="image-author">NANCY WHEELER</p>
+  </div>
+</li>
+<li>
+  <span id = "IRON WILL" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/ironwill.png');"></span>
+  <div class="details">
+    <h3><span class = "names">IRON WILL</span></h3>
+    <p class="image-author">JAKE PARK</p>
+  </div>
+</li>
+<li>
+  <span id = "KINDRED" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/kindred.png');"></span>
+  <div class="details">
+    <h3><span class = "names">KINDRED</span></h3>
+    <p class="image-author">ALL</p>
+  </div>
+</li>
+<li>
+  <span id = "LEADER" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/leader.png');"></span>
+  <div class="details">
+    <h3><span class = "names">LEADER</span></h3>
+    <p class="image-author">DWIGHT FAIRFIELD</p>
+  </div>
+</li>
+<li>
+  <span id = "LEFT BEHIND" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/leftbehind.png');"></span>
+  <div class="details">
+    <h3><span class = "names">LEFT BEHIND</span></h3>
+    <p class="image-author">BILL OVERBECK</p>
+  </div>
+</li>
+<li>
+  <span id = "LIGHTWEIGHT" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/lightweight.png');"></span>
+  <div class="details">
+    <h3><span class = "names">LIGHTWEIGHT</span></h3>
+    <p class="image-author">ALL</p>
+  </div>
+</li>
+<li>
+  <span id = "LITHE" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/lithe.png');"></span>
+  <div class="details">
+    <h3><span class = "names">LITHE</span></h3>
+    <p class="image-author">FENG MIN</p>
+  </div>
+</li>
+<li>
+  <span id = "LUCKY BREAK" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/luckybreak.png');"></span>
+  <div class="details">
+    <h3><span class = "names">LUCKY BREAK</span></h3>
+    <p class="image-author">YUI KIMURA</p>
+  </div>
+</li>
+<li>
+  <span id = "METTLE OF MAN" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/mettleofman.png');"></span>
+  <div class="details">
+    <h3><span class = "names">METTLE OF MAN</span></h3>
+    <p class="image-author">ASH WILLIAMS</p>
+  </div>
+</li>
+<li>
+  <span id = "NO MITHER" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/nomither.png');"></span>
+  <div class="details">
+    <h3><span class = "names">NO MITHER</span></h3>
+    <p class="image-author">DAVID KING</p>
+  </div>
+</li>
+<li>
+  <span id = "NO ONE LEFT BEHIND" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/nooneleftbehind.png');"></span>
+  <div class="details">
+    <h3><span class = "names">NO ONE LEFT BEHIND</span></h3>
+    <p class="image-author">ALL</p>
+  </div>
+</li>
+<li>
+  <span id = "OBJECT OF OBSESSION" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/objectofobsession.png');"></span>
+  <div class="details">
+    <h3><span class = "names">OBJECT OF OBSESSION</span></h3>
+    <p class="image-author">LAURIE STRODE</p>
+  </div>
+</li>
+<li>
+  <span id = "OFF THE RECORD" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/offtherecord.png');"></span>
+  <div class="details">
+    <h3><span class = "names">OFF THE RECORD</span></h3>
+    <p class="image-author">ZARINA KASSIR</p>
+  </div>
+</li>
+<li>
+  <span id = "OPEN HANDED" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/openhanded.png');"></span>
+  <div class="details">
+    <h3><span class = "names">OPEN HANDED</span></h3>
+    <p class="image-author">ACE VISCONTI</p>
+  </div>
+</li>
+<li>
+  <span id = "PHARMACY" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/pharmacy.png');"></span>
+  <div class="details">
+    <h3><span class = "names">PHARMACY</span></h3>
+    <p class="image-author">QUENTIN SMITH</p>
+  </div>
+</li>
+<li>
+  <span id = "PLUNDERER'S INSTINCT" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/plunderersinstinct.png');"></span>
+  <div class="details">
+    <h3><span class = "names">PLUNDERER'S INSTINCT</span></h3>
+    <p class="image-author">ALL</p>
+  </div>
+</li>
+<li>
+  <span id = "POISED" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/poised.png');"></span>
+  <div class="details">
+    <h3><span class = "names">POISED</span></h3>
+    <p class="image-author">JANE ROMERO</p>
+  </div>
+</li>
+<li>
+  <span id = "PROVE THYSELF" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/provethyself.png');"></span>
+  <div class="details">
+    <h3><span class = "names">PROVE THYSELF</span></h3>
+    <p class="image-author">DWIGHT FAIRFIELD</p>
+  </div>
+</li>
+<li>
+  <span id = "QUICK AND QUIET" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/quickandquiet.png');"></span>
+  <div class="details">
+    <h3><span class = "names">QUICK AND QUIET</span></h3>
+    <p class="image-author">MEG THOMAS</p>
+  </div>
+</li>
+<li>
+  <span id = "RED HERRING" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/redherring.png');"></span>
+  <div class="details">
+    <h3><span class = "names">RED HERRING</span></h3>
+    <p class="image-author">ZARINA KASSIR</p>
+  </div>
+</li>
+<li>
+  <span id = "REPRESSED ALLIANCE" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/repressedalliance.png');"></span>
+  <div class="details">
+    <h3><span class = "names">REPRESSED ALLIANCE</span></h3>
+    <p class="image-author">CHERYL MASON</p>
+  </div>
+</li>
+<li>
+  <span id = "RESILIENCE" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/resilience.png');"></span>
+  <div class="details">
+    <h3><span class = "names">RESILIENCE</span></h3>
+    <p class="image-author">ALL</p>
+  </div>
+</li>
+<li>
+  <span id = "SABOTEUR" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/saboteur.png');"></span>
+  <div class="details">
+    <h3><span class = "names">SABOTEUR</span></h3>
+    <p class="image-author">JAKE PARK</p>
+  </div>
+</li>
+<li>
+  <span id = "SECOND WIND" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/secondwind.png');"></span>
+  <div class="details">
+    <h3><span class = "names">SECOND WIND</span></h3>
+    <p class="image-author">STEVE HARRINGTON</p>
+  </div>
+</li>
+<li>
+  <span id = "SELF CARE" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/selfcare.png');"></span>
+  <div class="details">
+    <h3><span class = "names">SELF CARE</span></h3>
+    <p class="image-author">CLAUDETTE MOREL</p>
+  </div>
+</li>
+<li>
+  <span id = "SLIPPERY MEAT" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/slipperymeat.png');"></span>
+  <div class="details">
+    <h3><span class = "names">SLIPPERY MEAT</span></h3>
+    <p class="image-author">ALL</p>
+  </div>
+</li>
+<li>
+  <span id = "SMALL GAME" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/smallgame.png');"></span>
+  <div class="details">
+    <h3><span class = "names">SMALL GAME</span></h3>
+    <p class="image-author">ALL</p>
+  </div>
+</li>
+<li>
+  <span id = "SOLE SURVIVOR" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/solesurvivor.png');"></span>
+  <div class="details">
+    <h3><span class = "names">SOLE SURVIVOR</span></h3>
+    <p class="image-author">LAURIE STRODE</p>
+  </div>
+</li>
+<li>
+  <span id = "SOLIDARITY" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/solidarity.png');"></span>
+  <div class="details">
+    <h3><span class = "names">SOLIDARITY</span></h3>
+    <p class="image-author">JANE ROMERO</p>
+  </div>
+</li>
+<li>
+  <span id = "SOUL GUARD" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/soulguard.png');"></span>
+  <div class="details">
+    <h3><span class = "names">SOUL GUARD</span></h3>
+    <p class="image-author">CHERYL MASON</p>
+  </div>
+</li>
+<li>
+  <span id = "SPINE CHILL" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/spinechill.png');"></span>
+  <div class="details">
+    <h3><span class = "names">SPINE CHILL</span></h3>
+    <p class="image-author">ALL</p>
+  </div>
+</li>
+<li>
+  <span id = "SPRINT BURST" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/sprintburst.png');"></span>
+  <div class="details">
+    <h3><span class = "names">SPRINT BURST</span></h3>
+    <p class="image-author">MEG THOMAS</p>
+  </div>
+</li>
+<li>
+  <span id = "STAKEOUT" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/stakeout.png');"></span>
+  <div class="details">
+    <h3><span class = "names">STAKEOUT</span></h3>
+    <p class="image-author">DETECTIVE TAPP</p>
+  </div>
+</li>
+<li>
+  <span id = "STREETWISE" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/streetwise.png');"></span>
+  <div class="details">
+    <h3><span class = "names">STREETWISE</span></h3>
+    <p class="image-author">NEA KARLSSON</p>
+  </div>
+</li>
+<li>
+  <span id = "TECHNICIAN" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/technician.png');"></span>
+  <div class="details">
+    <h3><span class = "names">TECHNICIAN</span></h3>
+    <p class="image-author">FENG MIN</p>
+  </div>
+</li>
+<li>
+  <span id = "TENACITY" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/tenacity.png');"></span>
+  <div class="details">
+    <h3><span class = "names">TENACITY</span></h3>
+    <p class="image-author">DETECTIVE TAPP</p>
+  </div>
+</li>
+<li>
+  <span id = "THIS IS NOT HAPPENING" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/thisisnothappening.png');"></span>
+  <div class="details">
+    <h3><span class = "names">THIS IS NOT HAPPENING</span></h3>
+    <p class="image-author">ALL</p>
+  </div>
+</li>
+<li>
+  <span id = "UNBREAKABLE" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/unbreakable.png');"></span>
+  <div class="details">
+    <h3><span class = "names">UNBREAKABLE</span></h3>
+    <p class="image-author">BILL OVERBECK</p>
+  </div>
+</li>
+<li>
+  <span id = "UP THE ANTE" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/uptheante.png');"></span>
+  <div class="details">
+    <h3><span class = "names">UP THE ANTE</span></h3>
+    <p class="image-author">ACE VISCONTI</p>
+  </div>
+</li>
+<li>
+  <span id = "URBAN EVASION" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/urbanevasion.png');"></span>
+  <div class="details">
+    <h3><span class = "names">URBAN EVASION</span></h3>
+    <p class="image-author">NEA KARLSSON</p>
+  </div>
+</li>
+<li>
+  <span id = "VIGIL" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/diversion.png');"></span>
+  <div class="details">
+    <h3><span class = "names">VIGIL</span></h3>
+    <p class="image-author">QUENTIN SMITH</p>
+  </div>
+</li>
+<li>
+  <span id = "VISIONARY" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/visionary.png');"></span>
+  <div class="details">
+    <h3><span class = "names">VISIONARY</span></h3>
+    <p class="image-author">FELIX RICHTER</p>
+  </div>
+</li>
+<li>
+  <span id = "WAKE UP" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/wakeup.png');"></span>
+  <div class="details">
+    <h3><span class = "names">WAKE UP</span></h3>
+    <p class="image-author">QUENTIN SMITH</p>
+  </div>
+</li>
+<li>
+  <span id = "WE'LL MAKE IT" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/wellmakeit.png');"></span>
+  <div class="details">
+    <h3><span class = "names">WE'LL MAKE IT</span></h3>
+    <p class="image-author">ALL</p>
+  </div>
+</li>
+<li>
+  <span id = "WE'RE GONNA LIVE FOREVER" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/weregonnaliveforever.png');"></span>
+  <div class="details">
+    <h3><span class = "names">WE'RE GONNA LIVE FOREVER</span></h3>
+    <p class="image-author">DAVID KING</p>
+  </div>
+</li>
+<li>
+  <span id = "WINDOWS OF OPPORTUNITY" class = "imgs" onclick = "clickChange(this)" style="background-image: url('S_Perks/windowsofopportunity.png');"></span>
+  <div class="details">
+    <h3><span class = "names">WINDOWS OF OPPORTUNITY</span></h3>
+    <p class="image-author">KATE DENSON</p>
+  </div>
+</li>
+</ul>
+	
+	
+	
+	<script>
+		var pNames = [];
+		var pNamesCopy = [];
+		var randArr = [];
+		var randNames = ["n0", "n1", "n2", "n3"];
+		var x, i, l;
+		x = document.getElementsByClassName("names");
+		y = document.getElementsByClassName("imgs");
+		l = x.length;
+		for(i = 0; i < l; i++){
+			pNames.push(x[i].innerHTML);
+		}
+		for(i = 0; i < l; i++){
+			pNamesCopy.push(x[i].innerHTML);
+		}
+		
+		function clickChange(elmnt){
+			var isOn = false;
+			var j;
+			var itemId = elmnt.id;
+			for(j = 0; j < pNames.length; j++){
+				if(pNames[j] == itemId){
+					isOn = true;
+				}
+			}
+			if(isOn == true){
+				elmnt.style.borderColor = "red";
+				var index = pNames.indexOf(itemId);
+				pNames.splice(index, 1);
+				isOn = false;
+			}
+			else{
+				elmnt.style.borderColor = "white";
+				pNames.push(itemId);
+			}
+			
+		}
+		
+		function reset(){
+			pNames = pNamesCopy;
+			for(i = 0; i < l; i++){
+				y[i].style.borderColor = "white";
+			}
+			for (var z = 0; z < 4; z++){
+				document.getElementById(z).style.backgroundImage = null;
+				document.getElementById(randNames[z]).innerHTML = null;
+			}
+		}
+		
+		function roll(){
+			if(pNames.length <= 3){
+				alert("Please select 4 or more perks");
+			}
+			else{
+				randArr = [];
+				for(var z = 0; z < pNames.length; z++){
+					randArr.push(pNames[z]);
+				}
+				for(var z = 0; z < 4; z++){
+					var tempRan = rand();
+					document.getElementById(z).style.backgroundImage = document.getElementById(randArr[tempRan]).style.backgroundImage;
+					document.getElementById(randNames[z]).innerHTML = randArr[tempRan];
+					randArr.splice(tempRan, 1);
+				}
+			}
+				
+		}
+		
+		function rand(){
+			var ran = (Math.floor(Math.random() * randArr.length));
+			return(ran);
+		}
+		
+</script>
+</body>
+
+</html>
